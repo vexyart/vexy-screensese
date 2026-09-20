@@ -67,6 +67,18 @@ With `--view=keys` you direct the views while recording: hold `Ctrl+Alt` (change
 
 `--transition` sets the seconds per zoom or pan; `0` cuts. Overlays are drawn after the move, so badges and click marks keep their size and stay with the pointer.
 
+## Timeflex
+
+Busy parts slower, idle parts faster.
+
+```bash
+screensese timeflex Demo.cap                            # report what would change
+screensese timeflex Demo.cap --range=0.7..4 --write     # save the new cut list into the project
+screensese burn Demo.cap --timeflex                     # or apply it on the fly
+```
+
+Choose what counts as activity with `--signals`: `pointer`, `keys`, `mic`, `system`. `--range=slowest..fastest` sets how far the speed may move either side of 1; the change between speeds always follows a smooth curve. Unless `mic` is one of the signals, speech plays at exactly natural speed and only the silences flex, so sound and picture stay together.
+
 ## Keystroke visualisation
 
 Keystrokes appear as white text on a black rounded rectangle that follows the pointer. Text appears and disappears instantly as keys are pressed and released; while a key is held, the label stays on screen. Larger key combinations (for example, a chord like `Cmd+Shift+P`) linger on screen a little longer than a single key press, so viewers have time to read them. Size is configurable.

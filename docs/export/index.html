@@ -810,6 +810,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#timeflex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeflex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keystroke-visualisation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1172,6 +1183,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#timeflex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Timeflex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keystroke-visualisation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1292,6 +1314,13 @@ screensese burn Demo.cap --canvas=1920x1080 --view=keys  # views you chose while
 <p>With <code>--view=auto</code> the view starts in the centre. The moment the pointer leaves the centre rectangle, the view zooms out to far, or with <code>--leave=pan</code> pans to the close view that holds the pointer. It returns to the centre only after the pointer has stayed there for <code>--center_after</code> seconds (default 1.5).</p>
 <p>With <code>--view=keys</code> you direct the views while recording: hold <code>Ctrl+Alt</code> (change it with <code>--view_chord</code>) and press <code>0</code> for far or <code>1</code> to <code>9</code> for the close views in reading order. These presses never show up in the keystroke overlay.</p>
 <p><code>--transition</code> sets the seconds per zoom or pan; <code>0</code> cuts. Overlays are drawn after the move, so badges and click marks keep their size and stay with the pointer.</p>
+<h2 id="timeflex">Timeflex</h2>
+<p>Busy parts slower, idle parts faster.</p>
+<pre><code class="language-bash">screensese timeflex Demo.cap                            # report what would change
+screensese timeflex Demo.cap --range=0.7..4 --write     # save the new cut list into the project
+screensese burn Demo.cap --timeflex                     # or apply it on the fly
+</code></pre>
+<p>Choose what counts as activity with <code>--signals</code>: <code>pointer</code>, <code>keys</code>, <code>mic</code>, <code>system</code>. <code>--range=slowest..fastest</code> sets how far the speed may move either side of 1; the change between speeds always follows a smooth curve. Unless <code>mic</code> is one of the signals, speech plays at exactly natural speed and only the silences flex, so sound and picture stay together.</p>
 <h2 id="keystroke-visualisation">Keystroke visualisation</h2>
 <p>Keystrokes appear as white text on a black rounded rectangle that follows the pointer. Text appears and disappears instantly as keys are pressed and released; while a key is held, the label stays on screen. Larger key combinations (for example, a chord like <code>Cmd+Shift+P</code>) linger on screen a little longer than a single key press, so viewers have time to read them. Size is configurable.</p>
 <h2 id="click-visualisation">Click visualisation</h2>
