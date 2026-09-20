@@ -1,0 +1,1596 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Vexy Screensese, an AGPLv3 fork of Cap: screen recording with caption and keystroke/click visualisation export.">
+      
+      
+      
+        <link rel="canonical" href="https://vexy.dev/vexy-screensese/cap/self-hosting/">
+      
+      
+        <link rel="prev" href="../../export/">
+      
+      
+        <link rel="next" href="../s3-config/">
+      
+      
+        
+      
+      
+      
+      
+        
+        
+        
+          <link rel="icon" href="../../assets/images/favicon.png">
+        
+      
+      <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.2.0">
+    
+    
+      
+        <title>Self-hosting Vexy Screensese Web - Vexy Screensese</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d7aee198.min.css">
+      
+    
+    
+
+    
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+  
+  
+    <body dir="ltr" data-mx-topbar="glass">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="toc" type="checkbox" id="__toc" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__toc"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#self-hosting-vexy-screensese-web" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vexy Screensese" class="md-header__button md-logo" aria-label="Vexy Screensese" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vexy Screensese
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Self-hosting Vexy Screensese Web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.25 2a8.25 8.25 0 0 1 6.34 13.53l5.69 5.69a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215l-5.69-5.69A8.25 8.25 0 1 1 10.25 2M3.5 10.25a6.75 6.75 0 1 0 13.5 0 6.75 6.75 0 0 0-13.5 0"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0">
+        <div class="md-search-result md-search-result--pagefind" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/vexyart/vexy-screensese-cap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vexyart/vexy-screensese-cap
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vexy Screensese" class="md-nav__button md-logo" aria-label="Vexy Screensese" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Vexy Screensese
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/vexyart/vexy-screensese-cap" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    vexyart/vexy-screensese-cap
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recording
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Recording
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/instant-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instant Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/studio-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Studio Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/camera-and-mic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Camera & Microphone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recording/keyboard-shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard Shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exporting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Exporting
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The screensese CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Hosting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Self-Hosting
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-hosting Vexy Screensese Web
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-hosting Vexy Screensese Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start (One Command)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-docker-compose-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Docker Compose (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-coolify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Coolify
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-vexy-screensese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting Vexy Screensese
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google OAuth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apple-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apple OAuth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s3-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S3-compatible Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s3-config/aws-s3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS S3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../s3-config/cloudflare-r2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloudflare R2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc">
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start (One Command)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Options
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-docker-compose-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Docker Compose (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-coolify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Coolify
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connecting-vexy-screensese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting Vexy Screensese
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Email Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Optional Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google OAuth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apple-oauth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apple OAuth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Support
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              
+              
+              <article class="md-content__inner md-typeset" data-pagefind-body>
+                
+                  
+  
+  
+
+
+<h1 id="self-hosting-vexy-screensese-web">Self-hosting Vexy Screensese Web</h1>
+<p><em>How to deploy Vexy Screensese Web on your own infrastructure</em></p>
+<p>Vexy Screensese Web is the web application for uploading and sharing recordings — the same codebase, as an AGPL fork, that powers Cap.so.
+You can upload videos to it from the dashboard or from Vexy Screensese Desktop.</p>
+<h2 id="quick-start-one-command">Quick Start (One Command)</h2>
+<p>The fastest way to self-host Vexy Screensese is with Docker Compose. This single command will start everything you need:</p>
+<pre><code class="language-bash">git clone -b modified https://github.com/vexyart/vexy-screensese-cap.git
+cd vexy-screensese-cap
+docker compose up -d
+</code></pre>
+<p>That's it! Vexy Screensese will be available at <code>http://localhost:3000</code>.</p>
+<blockquote>
+<p><strong>Security Notice for Production Deployments</strong></p>
+<p>The default <code>docker-compose.yml</code> includes placeholder secrets for quick local testing. <strong>If you're deploying to a public server or production environment</strong>, you must change these values. See the <a href="#production-checklist">Production Checklist</a> below.</p>
+</blockquote>
+<p>Login links will appear in the logs since email isn't configured:</p>
+<pre><code class="language-bash">docker compose logs cap-web
+</code></pre>
+<h2 id="deployment-options">Deployment Options</h2>
+<h3 id="option-1-docker-compose-recommended">Option 1: Docker Compose (Recommended)</h3>
+<p>Best for VPS, home servers, or any Docker-capable host.</p>
+<p><strong>What's included:</strong>
+- Vexy Screensese Web application
+- Media server (FFmpeg processing)
+- MySQL database
+- MinIO (S3-compatible storage)</p>
+<p><strong>Steps:</strong>
+1. Clone the repository
+2. Run <code>docker compose up -d</code>
+3. Access Vexy Screensese at <code>http://localhost:3000</code></p>
+<blockquote>
+<p><strong>Note:</strong> The main <code>docker-compose.yml</code> builds the media server from source, so a full clone of the repository is required. The Coolify compose file uses a pre-built image from <code>ghcr.io</code> instead.</p>
+</blockquote>
+<p><strong>Custom configuration:</strong></p>
+<p>Create a <code>.env</code> file to customize your deployment:</p>
+<pre><code class="language-bash"># Public URL (required for production)
+CAP_URL=https://cap.yourdomain.com
+
+# S3 public URL (for video playback)
+S3_PUBLIC_URL=https://s3.yourdomain.com
+
+# Optional: Custom ports
+CAP_PORT=3000
+MINIO_PORT=9000
+
+# Optional: Custom passwords (auto-generated if not set)
+MYSQL_PASSWORD=your-secure-password
+MINIO_ROOT_PASSWORD=your-minio-password
+</code></pre>
+<h3 id="option-2-coolify">Option 2: Coolify</h3>
+<p>For Coolify users, use <code>docker-compose.coolify.yml</code> which includes environment variable placeholders:</p>
+<ol>
+<li>Create a new Docker Compose project in Coolify</li>
+<li>Point to the Vexy Screensese repository</li>
+<li>Set compose file to <code>docker-compose.coolify.yml</code></li>
+<li>Configure environment variables in Coolify's UI</li>
+<li>Deploy</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> The Coolify compose file uses slightly different environment variable names: <code>WEB_URL</code> instead of <code>CAP_URL</code>, and <code>S3_PUBLIC_ENDPOINT</code> instead of <code>S3_PUBLIC_URL</code>.</p>
+</blockquote>
+<h2 id="connecting-vexy-screensese">Connecting Vexy Screensese</h2>
+<ol>
+<li>Open Vexy Screensese settings</li>
+<li>Set 'Vexy Screensese Server URL' to your deployment URL (e.g., <code>https://cap.yourdomain.com</code>)</li>
+<li>Uploads will now go to your self-hosted instance</li>
+</ol>
+<h2 id="email-configuration">Email Configuration</h2>
+<p>By default, login links are printed to the server logs. To send emails:</p>
+<ol>
+<li>Create an account at <a href="https://resend.com">Resend</a></li>
+<li>Add these environment variables:
+   <code>bash
+   RESEND_API_KEY=re_xxxxx
+   RESEND_FROM_DOMAIN=yourdomain.com</code></li>
+</ol>
+<h2 id="optional-features">Optional Features</h2>
+<h3 id="ai-features">AI Features</h3>
+<p>For video transcription and AI features (titles, summaries, chapters,
+transcript translation, and docs Ask AI):</p>
+<pre><code class="language-bash">ASSEMBLY_API_KEY=your-key    # Transcription
+GROQ_API_KEY=your-key        # AI features
+OPENAI_API_KEY=your-key      # AI features
+ANTHROPIC_API_KEY=your-key   # AI features
+</code></pre>
+<p>When <code>AI_PROVIDER</code> is not set, AI providers are auto-detected from whichever
+keys are present. Generation features (titles, summaries, chapters,
+translation) prefer Groq → OpenAI → Anthropic; chat features (the support
+messenger and docs Ask AI) prefer Anthropic → OpenAI → Groq. Earlier
+providers are preferred; later ones are automatic fallbacks.</p>
+<p>To pick a provider explicitly, set <code>AI_PROVIDER</code> to one of <code>assemblyai</code>,
+<code>openai</code>, <code>anthropic</code>, <code>groq</code>, or <code>openai-compatible</code>. Any other configured
+providers stay in the chain as fallbacks.</p>
+<pre><code class="language-bash">AI_PROVIDER=assemblyai
+</code></pre>
+<p><code>assemblyai</code> reuses your existing <code>ASSEMBLY_API_KEY</code> via the AssemblyAI LLM
+Gateway, so one key covers transcription and AI features. It is never
+auto-detected: transcription-only instances don't start incurring LLM charges
+unless you opt in, and opting in bills LLM tokens to the same AssemblyAI
+account as transcription.</p>
+<p><code>openai-compatible</code> works with any OpenAI-compatible endpoint such as Ollama,
+OpenRouter, or LM Studio. It requires <code>AI_BASE_URL</code> and <code>AI_MODEL</code> (and
+<code>AI_API_KEY</code> if your endpoint needs one):</p>
+<pre><code class="language-bash">AI_PROVIDER=openai-compatible
+AI_BASE_URL=http://localhost:11434/v1
+AI_MODEL=llama3.3
+AI_API_KEY=your-key          # If the endpoint requires one
+</code></pre>
+<p>Each provider has sensible default models. You can override them per role for
+the provider selected by <code>AI_PROVIDER</code>:</p>
+<pre><code class="language-bash">AI_MODEL=your-model          # Generation: titles, summaries, chapters, translation
+AI_CHAT_MODEL=your-model     # Support chat
+AI_STREAM_MODEL=your-model   # Streaming docs Ask AI
+</code></pre>
+<p>For the AssemblyAI EU gateway, set
+<code>AI_BASE_URL=https://llm-gateway.eu.assemblyai.com/v1</code>. The EU gateway only
+serves Claude and Gemini models, so you must also override <code>AI_MODEL</code> and
+<code>AI_STREAM_MODEL</code> (the defaults are OpenAI-family models that are US-only).</p>
+<h3 id="google-oauth">Google OAuth</h3>
+<pre><code class="language-bash">GOOGLE_CLIENT_ID=your-client-id
+GOOGLE_CLIENT_SECRET=your-secret
+</code></pre>
+<h3 id="apple-oauth">Apple OAuth</h3>
+<p>Create a Sign in with Apple Services ID, register
+<code>https://your-domain.example/api/auth/callback/apple</code> as its return URL, and
+generate a client-secret JWT:</p>
+<pre><code class="language-bash">APPLE_CLIENT_ID=your-services-id
+APPLE_CLIENT_SECRET=your-client-secret-jwt
+</code></pre>
+<p>Apple client-secret JWTs expire, so rotate the secret before its configured
+expiration date.</p>
+<h2 id="production-checklist">Production Checklist</h2>
+<blockquote>
+<p><strong>Critical: Change Default Secrets Before Going Public</strong></p>
+<p>The default <code>docker-compose.yml</code> contains <strong>hardcoded placeholder secrets</strong> that are visible in the public repository. Anyone who knows you're using Vexy Screensese with defaults could potentially:</p>
+<ul>
+<li><strong>Forge authentication sessions</strong> (via <code>NEXTAUTH_SECRET</code>)</li>
+<li><strong>Decrypt sensitive database fields</strong> (via <code>DATABASE_ENCRYPTION_KEY</code>)</li>
+<li><strong>Spoof webhook requests</strong> (via <code>MEDIA_SERVER_WEBHOOK_SECRET</code>)</li>
+</ul>
+<p>This is fine for local development or testing on a private network, but <strong>you must generate unique secrets before exposing Vexy Screensese to the internet</strong>.</p>
+</blockquote>
+<p><strong>Generate secure secrets:</strong></p>
+<pre><code class="language-bash">openssl rand -hex 32
+</code></pre>
+<p>Run this command three times to generate values for:
+- <code>NEXTAUTH_SECRET</code>
+- <code>DATABASE_ENCRYPTION_KEY</code>
+- <code>MEDIA_SERVER_WEBHOOK_SECRET</code></p>
+<p><strong>Full production checklist:</strong></p>
+<ul>
+<li>[ ] Set secure passwords: <code>MYSQL_PASSWORD</code>, <code>MINIO_ROOT_PASSWORD</code></li>
+<li>[ ] Set secure secrets: <code>DATABASE_ENCRYPTION_KEY</code>, <code>NEXTAUTH_SECRET</code>, <code>MEDIA_SERVER_WEBHOOK_SECRET</code></li>
+<li>[ ] Set <code>CAP_URL</code> to your public URL</li>
+<li>[ ] Set <code>S3_PUBLIC_URL</code> to your MinIO/S3 public URL</li>
+<li>[ ] Configure a reverse proxy (nginx, Caddy, Traefik) with SSL</li>
+<li>[ ] Set up email with Resend</li>
+<li>[ ] Configure backups for MySQL and MinIO volumes</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<pre><code>┌─────────────────┐     ┌─────────────────┐
+│   Cap Desktop   │────▶│    Cap Web      │
+└─────────────────┘     │   (port 3000)   │
+                        └────────┬────────┘
+                                 │
+                    ┌────────────┼────────────┐
+                    ▼            ▼            ▼
+             ┌──────────┐ ┌──────────┐ ┌──────────┐
+             │  MySQL   │ │  MinIO   │ │  Media   │
+             │ (3306)   │ │ (9000)   │ │  Server  │
+             └──────────┘ └──────────┘ └──────────┘
+</code></pre>
+<h2 id="environment-variables-reference">Environment Variables Reference</h2>
+<p>See <a href="https://github.com/CapSoftware/Cap/blob/main/packages/env/server.ts"><code>packages/env/server.ts</code></a> for all available options.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p><strong>Can't access Vexy Screensese after starting:</strong></p>
+<pre><code class="language-bash">docker compose logs cap-web
+</code></pre>
+<p><strong>Database migration issues:</strong></p>
+<pre><code class="language-bash">docker compose down -v  # Warning: deletes data
+docker compose up -d
+</code></pre>
+<p><strong>Reset everything:</strong></p>
+<pre><code class="language-bash">docker compose down -v
+docker compose up -d
+</code></pre>
+<h2 id="support">Support</h2>
+<p>If you encounter issues with self-hosting:
+- <a href="https://github.com/vexyart/vexy-screensese/issues/new">Open a GitHub issue</a>
+- Check existing issues for solutions</p>
+<p>We do not offer direct support for self-hosted deployments.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+          <div class="md-top" data-md-component="top" hidden>
+  <div class="md-top__center">
+    <button type="button" class="md-top__button md-top__button--main" data-md-action="top">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+      <span>Back to top</span>
+    </button>
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--nav" for="__drawer" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-left" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg>
+      </label>
+    
+    
+      
+      
+      <label class="md-top__button md-top__side md-top__side--toc" for="__toc" >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-panel-right" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M15 3v18"/></svg>
+      </label>
+    
+  </div>
+</div>
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Vexy Screensese is AGPLv3. Portions of this documentation are adapted from the Cap documentation, © Cap Software, Inc., AGPLv3 — see <a href="attribution/">Attribution</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://jaywhj.github.io/mkdocs-materialx/" target="_blank" rel="noopener">
+      MaterialX
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+          
+          
+        
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "code": null, "features": ["navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy", "search.suggest"], "search": {"options": {"baseUrl": "../..", "bundleUrl": "../../search/", "highlight": false, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.44453a05.min.js"></script>
+      
+    
+  </body>
+</html>

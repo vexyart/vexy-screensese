@@ -1,0 +1,44 @@
+site_name: Vexy Screensese
+site_url: https://vexy.dev/vexy-screensese/
+site_description: >-
+  Documentation for Vexy Screensese, an AGPLv3 fork of Cap: screen recording
+  with caption and keystroke/click visualisation export.
+docs_dir: md
+site_dir: ../docs
+copyright: >-
+  Vexy Screensese is AGPLv3. Portions of this documentation are adapted from
+  the Cap documentation, © Cap Software, Inc., AGPLv3 — see <a
+  href="attribution/">Attribution</a>.
+
+repo_url: https://github.com/vexyart/vexy-screensese-cap
+repo_name: vexyart/vexy-screensese-cap
+
+theme:
+  name: materialx
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+
+nav:
+  - Home: index.md
+  - Download: download.md
+  - Getting Started:
+      - Introduction: cap/introduction.md
+      - Installation: cap/installation.md
+      - Quickstart: cap/quickstart.md
+  - Recording:
+      - Instant Mode: cap/recording/instant-mode.md
+      - Studio Mode: cap/recording/studio-mode.md
+      - Camera & Microphone: cap/recording/camera-and-mic.md
+      - Keyboard Shortcuts: cap/recording/keyboard-shortcuts.md
+  - Exporting:
+      - The screensese CLI: export.md
+  - Self-Hosting:
+      - Self-hosting Vexy Screensese Web: cap/self-hosting.md
+      - S3-compatible Storage: cap/s3-config.md
+      - AWS S3: cap/s3-config/aws-s3.md
+      - Cloudflare R2: cap/s3-config/cloudflare-r2.md
+  - Attribution: attribution.md
