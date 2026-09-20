@@ -26,6 +26,27 @@ Renders a hard-captions video: keystroke visualisation and click markers composi
 
 Renders the screen recording with keyboard and click overlays burnt directly into the video — a single finished file, no compositing required.
 
+### `screensese all BUNDLE`
+
+Runs everything above in one go and writes the results into `BUNDLE/exports/`: captions as WebVTT and SRT with keyboard shortcuts included, the event list, the overlay and the burnt-in video.
+
+## Options worth knowing
+
+| Option | Effect |
+| --- | --- |
+| `overlay --alpha` | A transparent ProRes 4444 `.mov` instead of a key colour |
+| `--background=green` | Key colour for `overlay` (default black) |
+| `--key_size`, `--click_size`, `--caption_size` | Sizes, as fractions of frame height |
+| `--caption_top` | Captions at the top instead of the bottom |
+| `--key_corner` | Keystroke badge parked bottom-left instead of following the pointer |
+| `--glyphs` | `⌘⇧K` instead of `Shift+Cmd+K` |
+| `--shortcuts_only` | Hide plain typing, keep shortcuts and named keys |
+| `--raw` (before the command) | Ignore the editor's cuts and speed changes |
+| `--captions_from=FILE` (before the command) | Use your own `.srt`, `.vtt` or Whisper `.json` transcript |
+| `--event_offset=SECONDS` (before the command) | Shift keys, clicks and pointer if they lead or lag the video |
+
+Recordings made on Windows show `Win` where a Mac shows `Cmd`.
+
 ## Keystroke visualisation
 
 Keystrokes appear as white text on a black rounded rectangle that follows the pointer. Text appears and disappears instantly as keys are pressed and released; while a key is held, the label stays on screen. Larger key combinations (for example, a chord like `Cmd+Shift+P`) linger on screen a little longer than a single key press, so viewers have time to read them. Size is configurable.

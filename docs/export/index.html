@@ -771,8 +771,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#screensese-all-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        screensese all BUNDLE
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options worth knowing
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1100,8 +1122,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#screensese-all-bundle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        screensese all BUNDLE
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#options-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Options worth knowing
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1161,6 +1205,60 @@
 <p>Renders a hard-captions video: keystroke visualisation and click markers composited on a solid key colour (default black), intended for keying out in a video editor. This lets you drop the overlay onto your own footage with full control over blending and timing in your editor of choice.</p>
 <h3 id="screensese-burn-bundle"><code>screensese burn BUNDLE</code></h3>
 <p>Renders the screen recording with keyboard and click overlays burnt directly into the video — a single finished file, no compositing required.</p>
+<h3 id="screensese-all-bundle"><code>screensese all BUNDLE</code></h3>
+<p>Runs everything above in one go and writes the results into <code>BUNDLE/exports/</code>: captions as WebVTT and SRT with keyboard shortcuts included, the event list, the overlay and the burnt-in video.</p>
+<h2 id="options-worth-knowing">Options worth knowing</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overlay --alpha</code></td>
+<td>A transparent ProRes 4444 <code>.mov</code> instead of a key colour</td>
+</tr>
+<tr>
+<td><code>--background=green</code></td>
+<td>Key colour for <code>overlay</code> (default black)</td>
+</tr>
+<tr>
+<td><code>--key_size</code>, <code>--click_size</code>, <code>--caption_size</code></td>
+<td>Sizes, as fractions of frame height</td>
+</tr>
+<tr>
+<td><code>--caption_top</code></td>
+<td>Captions at the top instead of the bottom</td>
+</tr>
+<tr>
+<td><code>--key_corner</code></td>
+<td>Keystroke badge parked bottom-left instead of following the pointer</td>
+</tr>
+<tr>
+<td><code>--glyphs</code></td>
+<td><code>⌘⇧K</code> instead of <code>Shift+Cmd+K</code></td>
+</tr>
+<tr>
+<td><code>--shortcuts_only</code></td>
+<td>Hide plain typing, keep shortcuts and named keys</td>
+</tr>
+<tr>
+<td><code>--raw</code> (before the command)</td>
+<td>Ignore the editor's cuts and speed changes</td>
+</tr>
+<tr>
+<td><code>--captions_from=FILE</code> (before the command)</td>
+<td>Use your own <code>.srt</code>, <code>.vtt</code> or Whisper <code>.json</code> transcript</td>
+</tr>
+<tr>
+<td><code>--event_offset=SECONDS</code> (before the command)</td>
+<td>Shift keys, clicks and pointer if they lead or lag the video</td>
+</tr>
+</tbody>
+</table>
+<p>Recordings made on Windows show <code>Win</code> where a Mac shows <code>Cmd</code>.</p>
 <h2 id="keystroke-visualisation">Keystroke visualisation</h2>
 <p>Keystrokes appear as white text on a black rounded rectangle that follows the pointer. Text appears and disappears instantly as keys are pressed and released; while a key is held, the label stays on screen. Larger key combinations (for example, a chord like <code>Cmd+Shift+P</code>) linger on screen a little longer than a single key press, so viewers have time to read them. Size is configurable.</p>
 <h2 id="click-visualisation">Click visualisation</h2>
