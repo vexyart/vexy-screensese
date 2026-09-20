@@ -11,6 +11,11 @@
         <changefreq>daily</changefreq>
     </url>
     <url>
+        <loc>https://vexy.dev/vexy-screensese/control/</loc>
+        <lastmod>2026-09-20</lastmod>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
         <loc>https://vexy.dev/vexy-screensese/download/</loc>
         <lastmod>2026-09-20</lastmod>
         <changefreq>daily</changefreq>

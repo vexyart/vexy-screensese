@@ -10,35 +10,35 @@
       
       
       
-        <link rel="canonical" href="https://vexy.dev/vexy-screensese/cap/s3-config/aws-s3/">
+        <link rel="canonical" href="https://vexy.dev/vexy-screensese/control/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../export/">
       
       
-        <link rel="next" href="../cloudflare-r2/">
-      
-      
-        
-      
-      
+        <link rel="next" href="../cap/self-hosting/">
       
       
         
+      
+      
+      
+      
         
         
-          <link rel="icon" href="../../../assets/images/favicon.png">
+        
+          <link rel="icon" href="../assets/images/favicon.png">
         
       
       <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-materialx-10.2.0">
     
     
       
-        <title>AWS S3 - Vexy Screensese</title>
+        <title>CLI, MCP, HTTP and Python - Vexy Screensese</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.d7aee198.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.d7aee198.min.css">
       
     
     
@@ -58,7 +58,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aws-s3" class="md-skip">
+        <a href="#operate-it-from-anywhere" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Vexy Screensese" class="md-header__button md-logo" aria-label="Vexy Screensese" data-md-component="logo">
+    <a href=".." title="Vexy Screensese" class="md-header__button md-logo" aria-label="Vexy Screensese" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS S3
+              CLI, MCP, HTTP and Python
             
           </span>
         </div>
@@ -208,7 +208,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Vexy Screensese" class="md-nav__button md-logo" aria-label="Vexy Screensese" data-md-component="logo">
+    <a href=".." title="Vexy Screensese" class="md-nav__button md-logo" aria-label="Vexy Screensese" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -238,7 +238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -265,7 +265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/" class="md-nav__link">
+      <a href="../download/" class="md-nav__link">
         
   
   
@@ -339,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../introduction/" class="md-nav__link">
+      <a href="../cap/introduction/" class="md-nav__link">
         
   
   
@@ -367,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/" class="md-nav__link">
+      <a href="../cap/installation/" class="md-nav__link">
         
   
   
@@ -395,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quickstart/" class="md-nav__link">
+      <a href="../cap/quickstart/" class="md-nav__link">
         
   
   
@@ -477,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recording/instant-mode/" class="md-nav__link">
+      <a href="../cap/recording/instant-mode/" class="md-nav__link">
         
   
   
@@ -505,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recording/studio-mode/" class="md-nav__link">
+      <a href="../cap/recording/studio-mode/" class="md-nav__link">
         
   
   
@@ -533,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recording/camera-and-mic/" class="md-nav__link">
+      <a href="../cap/recording/camera-and-mic/" class="md-nav__link">
         
   
   
@@ -561,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recording/keyboard-shortcuts/" class="md-nav__link">
+      <a href="../cap/recording/keyboard-shortcuts/" class="md-nav__link">
         
   
   
@@ -569,116 +569,6 @@
     
   
     Keyboard Shortcuts
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Exporting
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Exporting
-  
-
-          </label>
-          <ul class="md-nav__list">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../export/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The screensese CLI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../control/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CLI, MCP, HTTP and Python
   
 
     
@@ -716,17 +606,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Self-Hosting
+    Exporting
   
 
     
@@ -737,12 +627,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Self-Hosting
+    Exporting
   
 
           </label>
@@ -755,42 +645,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../self-hosting/" class="md-nav__link">
+      <a href="../export/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Self-hosting Vexy Screensese Web
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    S3-compatible Storage
+    The screensese CLI
   
 
     
@@ -827,7 +689,7 @@
   <span class="md-ellipsis">
     
   
-    AWS S3
+    CLI, MCP, HTTP and Python
   
 
     
@@ -845,7 +707,7 @@
   <span class="md-ellipsis">
     
   
-    AWS S3
+    CLI, MCP, HTTP and Python
   
 
     
@@ -871,10 +733,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#create-the-bucket-and-credentials" class="md-nav__link">
+  <a href="#command-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create the bucket and credentials
+        Command line
       
     </span>
   </a>
@@ -882,10 +744,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-cors" class="md-nav__link">
+  <a href="#mcp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configure CORS
+        MCP
       
     </span>
   </a>
@@ -893,10 +755,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-vexy-screensese" class="md-nav__link">
+  <a href="#http" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Connect Vexy Screensese
+        HTTP
       
     </span>
   </a>
@@ -904,21 +766,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#organization-managed-storage" class="md-nav__link">
+  <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Organization-managed storage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-before-rollout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify before rollout
+        Python
       
     </span>
   </a>
@@ -934,6 +785,60 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Hosting
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Self-Hosting
+  
+
+          </label>
+          <ul class="md-nav__list">
+            
               
                 
   
@@ -941,7 +846,91 @@
   
   
     <li class="md-nav__item">
-      <a href="../cloudflare-r2/" class="md-nav__link">
+      <a href="../cap/self-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-hosting Vexy Screensese Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap/s3-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    S3-compatible Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap/s3-config/aws-s3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AWS S3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cap/s3-config/cloudflare-r2/" class="md-nav__link">
         
   
   
@@ -976,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../attribution/" class="md-nav__link">
+      <a href="../attribution/" class="md-nav__link">
         
   
   
@@ -1023,10 +1012,10 @@
     <ul class="md-nav__list" data-md-component="toc">
       
         <li class="md-nav__item">
-  <a href="#create-the-bucket-and-credentials" class="md-nav__link">
+  <a href="#command-line" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create the bucket and credentials
+        Command line
       
     </span>
   </a>
@@ -1034,10 +1023,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-cors" class="md-nav__link">
+  <a href="#mcp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configure CORS
+        MCP
       
     </span>
   </a>
@@ -1045,10 +1034,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connect-vexy-screensese" class="md-nav__link">
+  <a href="#http" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Connect Vexy Screensese
+        HTTP
       
     </span>
   </a>
@@ -1056,21 +1045,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#organization-managed-storage" class="md-nav__link">
+  <a href="#python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Organization-managed storage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-before-rollout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify before rollout
+        Python
       
     </span>
   </a>
@@ -1097,71 +1075,35 @@
   
 
 
-<h1 id="aws-s3">AWS S3</h1>
-<p><em>Use an Amazon S3 bucket for new Vexy Screensese uploads</em></p>
-<p>Vexy Screensese can use a private Amazon S3 bucket for new shareable-link uploads. Existing recordings remain on their current storage provider.</p>
-<h2 id="create-the-bucket-and-credentials">Create the bucket and credentials</h2>
-<p>Create a private S3 bucket in the region you plan to enter in Vexy Screensese. Keep public access blocked; Vexy Screensese reads objects through its storage layer and normal access checks.</p>
-<p>Create a dedicated IAM identity with access only to that bucket. Vexy Screensese currently needs to test the bucket, read and write objects, delete objects, and complete or abort multipart uploads. A starting policy is:</p>
-<pre><code class="language-json">{
-  &quot;Version&quot;: &quot;2012-10-17&quot;,
-  &quot;Statement&quot;: [
-    {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: [&quot;s3:ListBucket&quot;],
-      &quot;Resource&quot;: [&quot;arn:aws:s3:::BUCKET_NAME&quot;]
-    },
-    {
-      &quot;Effect&quot;: &quot;Allow&quot;,
-      &quot;Action&quot;: [
-        &quot;s3:GetObject&quot;,
-        &quot;s3:PutObject&quot;,
-        &quot;s3:DeleteObject&quot;,
-        &quot;s3:AbortMultipartUpload&quot;,
-        &quot;s3:ListMultipartUploadParts&quot;
-      ],
-      &quot;Resource&quot;: [&quot;arn:aws:s3:::BUCKET_NAME/*&quot;]
-    }
-  ]
-}
+<h1 id="operate-it-from-anywhere">Operate it from anywhere</h1>
+<p>One set of operations, reachable from the command line, from AI agents over MCP, over a local HTTP API and from Python.</p>
+<h2 id="command-line">Command line</h2>
+<pre><code class="language-bash">screensese ops                                     # every operation and its parameters
+screensese record start --screen=1 --duration=60   # record without touching the app's windows
+screensese record stop                             # prints the .cap bundle path
+screensese app open_editor Demo.cap                # drive the desktop app itself
+screensese burn Demo.cap --social=1080x1920
 </code></pre>
-<p>Replace <code>BUCKET_NAME</code> before saving. Apply narrower prefixes if your organization has an established storage policy.</p>
-<h2 id="configure-cors">Configure CORS</h2>
-<p>Browser uploads use presigned requests and need the <code>ETag</code> response header. Add every web origin that will upload through Vexy Screensese, including your custom or self-hosted domain if applicable:</p>
-<pre><code class="language-json">[
-  {
-    &quot;AllowedHeaders&quot;: [&quot;*&quot;],
-    &quot;AllowedMethods&quot;: [&quot;GET&quot;, &quot;HEAD&quot;, &quot;PUT&quot;],
-    &quot;AllowedOrigins&quot;: [&quot;https://cap.so&quot;],
-    &quot;ExposeHeaders&quot;: [&quot;ETag&quot;],
-    &quot;MaxAgeSeconds&quot;: 3000
-  }
-]
+<p>Structured results print as JSON. Options go after the command and the bundle.</p>
+<p>The app's <strong>Settings &gt; CLI</strong> page installs the bundled recorder command under the name <code>screensese</code>. The Python package installs a <code>screensese</code> as well, which is the superset: it passes the recorder's own commands (<code>export</code>, <code>project</code>, <code>targets</code>, <code>recordings</code>, <code>screenshot</code>, <code>doctor</code>) to the same bundled binary and adds the exports described on the <a href="../export/">exporter page</a>.</p>
+<h2 id="mcp">MCP</h2>
+<pre><code class="language-bash">uv tool install &quot;vexy-screensese[mcp]&quot;
+claude mcp add screensese -- screensese mcp
 </code></pre>
-<p>Do not copy origins you do not use. Add the exact scheme and host for each trusted Vexy Screensese deployment.</p>
-<h2 id="connect-vexy-screensese">Connect Vexy Screensese</h2>
-<ol>
-<li>Open <strong>Settings &gt; Integrations &gt; S3 Config</strong>.</li>
-<li>Select <strong>AWS S3</strong>.</li>
-<li>Enter the dedicated access-key ID and secret access key.</li>
-<li>Enter <code>https://s3.amazonaws.com</code> or the endpoint required by your AWS setup.</li>
-<li>Enter the bucket name and region.</li>
-<li>Click <strong>Test Connection</strong>.</li>
-<li>Save only after the test succeeds.</li>
-</ol>
-<p>The connection test performs a bucket-head request. A successful test confirms the credentials can reach the bucket, but a sample upload and playback is still required to verify object and CORS permissions.</p>
-<h2 id="organization-managed-storage">Organization-managed storage</h2>
-<p>Owners and admins can manage S3 at the organization level. When organization storage is active, members see that the integration is managed by the organization and cannot replace the configuration in Vexy Screensese.</p>
-<p>Changing the active provider affects future uploads. It does not bulk-move existing Vexy Screensese, Google Drive, or S3 objects.</p>
-<h2 id="verify-before-rollout">Verify before rollout</h2>
-<ol>
-<li>Upload one non-sensitive sample recording.</li>
-<li>Confirm the object appears in the intended bucket and prefix.</li>
-<li>Open the recording link as an allowed viewer.</li>
-<li>Confirm playback and any download behavior you intend to support.</li>
-<li>Delete the sample recording and confirm your retention expectations.</li>
-</ol>
-<p>Store credentials in Vexy Screensese's configuration flow, not in chat, tickets, or source control.</p>
+<p>One tool per operation, with schemas taken from the operations themselves. A typical agent flow: <code>targets</code>, <code>record_start</code>, <code>record_stop</code>, then <code>burn</code> on the bundle path that <code>record_stop</code> returned.</p>
+<h2 id="http">HTTP</h2>
+<pre><code class="language-bash">screensese serve --port=8765      # prints the bearer token it expects
+curl -H &quot;Authorization: Bearer $TOKEN&quot; http://127.0.0.1:8765/v1/ops
+curl -H &quot;Authorization: Bearer $TOKEN&quot; -d '{&quot;bundle&quot;:&quot;Demo.cap&quot;,&quot;social&quot;:&quot;1080x1920&quot;}' http://127.0.0.1:8765/v1/ops/burn
+curl -H &quot;Authorization: Bearer $TOKEN&quot; http://127.0.0.1:8765/v1/jobs/JOB_ID
+</code></pre>
+<p>The server listens on <code>127.0.0.1</code> only and needs the token on every request. Renders run as jobs: the first call answers with a job id to poll. It can start recordings and read your files, so do not expose it to a network.</p>
+<h2 id="python">Python</h2>
+<pre><code class="language-python">from vexy_screensese import ops
+
+session = ops.record_start(screen=&quot;1&quot;, duration=30)
+ops.burn(session[&quot;path&quot;], social=&quot;1080x1920&quot;, timeflex=True)
+</code></pre>
 
 
 
@@ -1244,10 +1186,10 @@
           
           
         
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "code": null, "features": ["navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy", "search.suggest"], "search": {"options": {"baseUrl": "../../..", "bundleUrl": "../../../search/", "highlight": false, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "code": null, "features": ["navigation.instant", "navigation.tracking", "navigation.top", "content.code.copy", "search.suggest"], "search": {"options": {"baseUrl": "..", "bundleUrl": "../search/", "highlight": false, "searchOptions": {}}, "provider": "pagefind"}, "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "code.collapse": "Collapse", "code.download": "Download", "code.expand": "Expand remaining # lines", "code.select": "Toggle line selection", "search.offline": "Switch to Lunr for offline search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.44453a05.min.js"></script>
+      <script src="../assets/javascripts/bundle.44453a05.min.js"></script>
       
     
   </body>

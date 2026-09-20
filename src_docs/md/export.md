@@ -67,6 +67,17 @@ With `--view=keys` you direct the views while recording: hold `Ctrl+Alt` (change
 
 `--transition` sets the seconds per zoom or pan; `0` cuts. Overlays are drawn after the move, so badges and click marks keep their size and stay with the pointer.
 
+## Reframe for social
+
+Turn a landscape recording into a portrait video whose window follows the work.
+
+```bash
+screensese burn Demo.cap --social=1080x1920    # glides sideways after the pointer
+screensese burn Demo.cap --social=720x1280     # glides sideways, and steps between three rows
+```
+
+Each axis is planned by how much room the window has. With next to none it is pinned, and `--cut=bottom|top|both` says what is lost: a 1934-pixel-high screen into a 1920-pixel canvas loses its bottom 14 pixels. With plenty it glides after the pointer (`--follow`) or steps between `--rows`. Gliding ignores small movements inside a dead zone (`--dead_zone=0.4`), never overshoots, is capped in speed (`--follow_speed`) and stops at the edges of the recording. With `--view=keys`, the `Ctrl+Alt`+digit chords you pressed while recording choose the rows.
+
 ## Timeflex
 
 Busy parts slower, idle parts faster.
@@ -77,7 +88,7 @@ screensese timeflex Demo.cap --range=0.7..4 --write     # save the new cut list 
 screensese burn Demo.cap --timeflex                     # or apply it on the fly
 ```
 
-Choose what counts as activity with `--signals`: `pointer`, `keys`, `mic`, `system`. `--range=slowest..fastest` sets how far the speed may move either side of 1; the change between speeds always follows a smooth curve. Unless `mic` is one of the signals, speech plays at exactly natural speed and only the silences flex, so sound and picture stay together.
+Choose what counts as activity with `--signals`: `pointer`, `keys`, `mic`, `system`, `video`. `--range=slowest..fastest` sets how far the speed may move either side of 1; the change between speeds always follows a smooth curve. Unless `mic` is one of the signals, speech plays at exactly natural speed and only the silences flex, so sound and picture stay together.
 
 ## Keystroke visualisation
 

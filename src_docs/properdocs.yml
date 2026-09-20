@@ -36,6 +36,7 @@ nav:
       - Keyboard Shortcuts: cap/recording/keyboard-shortcuts.md
   - Exporting:
       - The screensese CLI: export.md
+      - CLI, MCP, HTTP and Python: control.md
   - Self-Hosting:
       - Self-hosting Vexy Screensese Web: cap/self-hosting.md
       - S3-compatible Storage: cap/s3-config.md
