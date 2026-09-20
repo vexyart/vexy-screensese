@@ -799,6 +799,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#view-follows-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View follows action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keystroke-visualisation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1150,6 +1161,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#view-follows-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        View follows action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#keystroke-visualisation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1245,20 +1267,31 @@
 <td>Hide plain typing, keep shortcuts and named keys</td>
 </tr>
 <tr>
-<td><code>--raw</code> (before the command)</td>
+<td><code>--raw</code></td>
 <td>Ignore the editor's cuts and speed changes</td>
 </tr>
 <tr>
-<td><code>--captions_from=FILE</code> (before the command)</td>
+<td><code>--captions_from=FILE</code></td>
 <td>Use your own <code>.srt</code>, <code>.vtt</code> or Whisper <code>.json</code> transcript</td>
 </tr>
 <tr>
-<td><code>--event_offset=SECONDS</code> (before the command)</td>
+<td><code>--event_offset=SECONDS</code></td>
 <td>Shift keys, clicks and pointer if they lead or lag the video</td>
 </tr>
 </tbody>
 </table>
+<p>All options go after the command and the bundle: <code>screensese burn Demo.cap --raw --glyphs</code>.</p>
 <p>Recordings made on Windows show <code>Win</code> where a Mac shows <code>Cmd</code>.</p>
+<h2 id="view-follows-action">View follows action</h2>
+<p>Give <code>burn</code> a canvas and the picture moves with the work.</p>
+<pre><code class="language-bash">screensese burn Demo.cap --canvas=1920x1080              # follow the pointer
+screensese burn Demo.cap --canvas=1920x1080 --leave=pan  # pan between close views instead of zooming out
+screensese burn Demo.cap --canvas=1920x1080 --view=keys  # views you chose while recording
+</code></pre>
+<p>The <strong>far view</strong> shows the largest canvas-shaped part of the recording, scaled to fit. The nine <strong>close views</strong> map recording pixels to canvas pixels at <code>--ratio</code> (default <code>1:1</code>) and sit at the corners, the edges and the centre: <code>left-top</code>, <code>xcenter-top</code>, <code>right-top</code>, <code>left-ymiddle</code>, <code>center</code>, <code>right-ymiddle</code>, <code>left-bottom</code>, <code>xcenter-bottom</code>, <code>right-bottom</code>.</p>
+<p>With <code>--view=auto</code> the view starts in the centre. The moment the pointer leaves the centre rectangle, the view zooms out to far, or with <code>--leave=pan</code> pans to the close view that holds the pointer. It returns to the centre only after the pointer has stayed there for <code>--center_after</code> seconds (default 1.5).</p>
+<p>With <code>--view=keys</code> you direct the views while recording: hold <code>Ctrl+Alt</code> (change it with <code>--view_chord</code>) and press <code>0</code> for far or <code>1</code> to <code>9</code> for the close views in reading order. These presses never show up in the keystroke overlay.</p>
+<p><code>--transition</code> sets the seconds per zoom or pan; <code>0</code> cuts. Overlays are drawn after the move, so badges and click marks keep their size and stay with the pointer.</p>
 <h2 id="keystroke-visualisation">Keystroke visualisation</h2>
 <p>Keystrokes appear as white text on a black rounded rectangle that follows the pointer. Text appears and disappears instantly as keys are pressed and released; while a key is held, the label stays on screen. Larger key combinations (for example, a chord like <code>Cmd+Shift+P</code>) linger on screen a little longer than a single key press, so viewers have time to read them. Size is configurable.</p>
 <h2 id="click-visualisation">Click visualisation</h2>

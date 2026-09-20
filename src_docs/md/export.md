@@ -41,11 +41,31 @@ Runs everything above in one go and writes the results into `BUNDLE/exports/`: c
 | `--key_corner` | Keystroke badge parked bottom-left instead of following the pointer |
 | `--glyphs` | `⌘⇧K` instead of `Shift+Cmd+K` |
 | `--shortcuts_only` | Hide plain typing, keep shortcuts and named keys |
-| `--raw` (before the command) | Ignore the editor's cuts and speed changes |
-| `--captions_from=FILE` (before the command) | Use your own `.srt`, `.vtt` or Whisper `.json` transcript |
-| `--event_offset=SECONDS` (before the command) | Shift keys, clicks and pointer if they lead or lag the video |
+| `--raw` | Ignore the editor's cuts and speed changes |
+| `--captions_from=FILE` | Use your own `.srt`, `.vtt` or Whisper `.json` transcript |
+| `--event_offset=SECONDS` | Shift keys, clicks and pointer if they lead or lag the video |
+
+All options go after the command and the bundle: `screensese burn Demo.cap --raw --glyphs`.
 
 Recordings made on Windows show `Win` where a Mac shows `Cmd`.
+
+## View follows action
+
+Give `burn` a canvas and the picture moves with the work.
+
+```bash
+screensese burn Demo.cap --canvas=1920x1080              # follow the pointer
+screensese burn Demo.cap --canvas=1920x1080 --leave=pan  # pan between close views instead of zooming out
+screensese burn Demo.cap --canvas=1920x1080 --view=keys  # views you chose while recording
+```
+
+The **far view** shows the largest canvas-shaped part of the recording, scaled to fit. The nine **close views** map recording pixels to canvas pixels at `--ratio` (default `1:1`) and sit at the corners, the edges and the centre: `left-top`, `xcenter-top`, `right-top`, `left-ymiddle`, `center`, `right-ymiddle`, `left-bottom`, `xcenter-bottom`, `right-bottom`.
+
+With `--view=auto` the view starts in the centre. The moment the pointer leaves the centre rectangle, the view zooms out to far, or with `--leave=pan` pans to the close view that holds the pointer. It returns to the centre only after the pointer has stayed there for `--center_after` seconds (default 1.5).
+
+With `--view=keys` you direct the views while recording: hold `Ctrl+Alt` (change it with `--view_chord`) and press `0` for far or `1` to `9` for the close views in reading order. These presses never show up in the keystroke overlay.
+
+`--transition` sets the seconds per zoom or pan; `0` cuts. Overlays are drawn after the move, so badges and click marks keep their size and stay with the pointer.
 
 ## Keystroke visualisation
 
