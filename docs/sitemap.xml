@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://vexy.dev/vexy-screensese/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/attribution/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/control/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/download/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/export/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/installation/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/introduction/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/quickstart/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/s3-config/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/self-hosting/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/recording/camera-and-mic/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/recording/instant-mode/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/recording/keyboard-shortcuts/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/recording/studio-mode/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/s3-config/aws-s3/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
     <url>
         <loc>https://vexy.dev/vexy-screensese/cap/s3-config/cloudflare-r2/</loc>
-        <lastmod>2026-09-20</lastmod>
+        <lastmod>2026-09-26</lastmod>
         <changefreq>daily</changefreq>
     </url>
 </urlset>

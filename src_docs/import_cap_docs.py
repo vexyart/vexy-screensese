@@ -409,16 +409,13 @@ def _convert_file(
 
 
 def main(
-    source: str = (
-        "/Users/adam/Developer/vcs3/github.vexyart/vexy-screensese-priv/"
-        "vexy-screensese-cap/apps/web/content/docs"
-    ),
+    source: str | None = None,
     dest: str = "md",
 ) -> None:
     """Import Cap docs from SOURCE (MDX) into DEST (Markdown), relative to
     this script's directory unless DEST is absolute."""
-    source_root = Path(source).resolve()
     script_dir = Path(__file__).parent.resolve()
+    source_root = Path(source).resolve() if source else script_dir.parent.parent / "vexy-screensese-cap/apps/web/content/docs"
     dest_root = Path(dest)
     if not dest_root.is_absolute():
         dest_root = script_dir / dest_root

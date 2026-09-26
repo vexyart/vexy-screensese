@@ -799,10 +799,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#view-follows-action" class="md-nav__link">
+  <a href="#vexy-cinema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        View follows action
+        Vexy Cinema
       
     </span>
   </a>
@@ -810,10 +810,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reframe-for-social" class="md-nav__link">
+  <a href="#vexy-social" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reframe for social
+        Vexy Social
       
     </span>
   </a>
@@ -1211,10 +1211,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#view-follows-action" class="md-nav__link">
+  <a href="#vexy-cinema" class="md-nav__link">
     <span class="md-ellipsis">
       
-        View follows action
+        Vexy Cinema
       
     </span>
   </a>
@@ -1222,10 +1222,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reframe-for-social" class="md-nav__link">
+  <a href="#vexy-social" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reframe for social
+        Vexy Social
       
     </span>
   </a>
@@ -1354,22 +1354,30 @@
 </table>
 <p>All options go after the command and the bundle: <code>screensese burn Demo.cap --raw --glyphs</code>.</p>
 <p>Recordings made on Windows show <code>Win</code> where a Mac shows <code>Cmd</code>.</p>
-<h2 id="view-follows-action">View follows action</h2>
+<h2 id="vexy-cinema">Vexy Cinema</h2>
 <p>Give <code>burn</code> a canvas and the picture moves with the work.</p>
-<pre><code class="language-bash">screensese burn Demo.cap --canvas=1920x1080              # follow the pointer
-screensese burn Demo.cap --canvas=1920x1080 --leave=pan  # pan between close views instead of zooming out
-screensese burn Demo.cap --canvas=1920x1080 --view=keys  # views you chose while recording
+<pre><code class="language-bash">screensese burn Demo.cap --cinema=1920x1080              # follow the pointer
+screensese burn Demo.cap --cinema=1920x1080 --leave=pan  # pan between close views instead of zooming out
+screensese burn Demo.cap --cinema=1920x1080 --view=keys  # views you chose while recording
 </code></pre>
 <p>The <strong>far view</strong> shows the largest canvas-shaped part of the recording, scaled to fit. The nine <strong>close views</strong> map recording pixels to canvas pixels at <code>--ratio</code> (default <code>1:1</code>) and sit at the corners, the edges and the centre: <code>left-top</code>, <code>xcenter-top</code>, <code>right-top</code>, <code>left-ymiddle</code>, <code>center</code>, <code>right-ymiddle</code>, <code>left-bottom</code>, <code>xcenter-bottom</code>, <code>right-bottom</code>.</p>
 <p>With <code>--view=auto</code> the view starts in the centre. The moment the pointer leaves the centre rectangle, the view zooms out to far, or with <code>--leave=pan</code> pans to the close view that holds the pointer. It returns to the centre only after the pointer has stayed there for <code>--center_after</code> seconds (default 1.5).</p>
 <p>With <code>--view=keys</code> you direct the views while recording: hold <code>Ctrl+Alt</code> (change it with <code>--view_chord</code>) and press <code>0</code> for far or <code>1</code> to <code>9</code> for the close views in reading order. These presses never show up in the keystroke overlay.</p>
 <p><code>--transition</code> sets the seconds per zoom or pan; <code>0</code> cuts. Overlays are drawn after the move, so badges and click marks keep their size and stay with the pointer.</p>
-<h2 id="reframe-for-social">Reframe for social</h2>
+<h2 id="vexy-social">Vexy Social</h2>
 <p>Turn a landscape recording into a portrait video whose window follows the work.</p>
 <pre><code class="language-bash">screensese burn Demo.cap --social=1080x1920    # glides sideways after the pointer
 screensese burn Demo.cap --social=720x1280     # glides sideways, and steps between three rows
 </code></pre>
 <p>Each axis is planned by how much room the window has. With next to none it is pinned, and <code>--cut=bottom|top|both</code> says what is lost: a 1934-pixel-high screen into a 1920-pixel canvas loses its bottom 14 pixels. With plenty it glides after the pointer (<code>--follow</code>) or steps between <code>--rows</code>. Gliding ignores small movements inside a dead zone (<code>--dead_zone=0.4</code>), never overshoots, is capped in speed (<code>--follow_speed</code>) and stops at the edges of the recording. With <code>--view=keys</code>, the <code>Ctrl+Alt</code>+digit chords you pressed while recording choose the rows.</p>
+<p>The editor also has a <strong>Vexy</strong> button in its header: Timeflex, an export with keystrokes, clicks and captions burnt in, and an export of the overlays alone. It runs this exporter, so the exporter has to be installed (<code>./installmac.sh --exporter</code>, or <code>uv tool install</code> the package) along with ffmpeg.</p>
+<p>Both styles are in the app's editor too (the app has one editor: upstream's experimental second front end is not offered): right-click the zoom lane of the timeline (or use the prompt on an empty lane) and pick Vexy Cinema or Vexy Social. They fill the lane with ordinary zoom segments, which you can then move, stretch or delete like any other; upstream's click-based generator is still there beside them.</p>
+<p>The same two styles can be written into the project instead of rendered, as zoom segments the editor understands:</p>
+<pre><code class="language-bash">screensese zoom Demo.cap --style=cinema --write             # rest on the centre, zoom out when the pointer leaves
+screensese zoom Demo.cap --style=cinema --leave=pan --write # pan to where the pointer goes instead
+screensese zoom Demo.cap --style=social --write             # portrait canvas, gliding after the pointer
+</code></pre>
+<p>Open the recording in the editor afterwards: the segments are in the zoom lane, to be moved, stretched or deleted like any other. The untouched project is kept once as <code>project-config.original.json</code>.</p>
 <h2 id="timeflex">Timeflex</h2>
 <p>Busy parts slower, idle parts faster.</p>
 <pre><code class="language-bash">screensese timeflex Demo.cap                            # report what would change

@@ -19,6 +19,8 @@ The docs are built with [ProperDocs](https://properdocs.org/) and the [MaterialX
 ./build.sh serve   # local dev server with live reload at localhost:8000
 ```
 
+The build reads Cap documentation from the sibling `vexy-screensese-cap` checkout. In a standalone checkout it fetches only that documentation into a temporary sparse clone.
+
 Sources live in `src_docs/`:
 
 - `src_docs/properdocs.yml` — site config and navigation

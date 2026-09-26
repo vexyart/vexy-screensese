@@ -10,10 +10,18 @@ set -euo pipefail
 cd "$(dirname "$0")/src_docs"
 
 UV_ARGS=(uv run --with properdocs --with mkdocs-materialx)
+cap_docs_source="../../vexy-screensese-cap/apps/web/content/docs"
 
 case "${1:-build}" in
   build)
-    uv run --with fire import_cap_docs.py
+    if [[ ! -d "$cap_docs_source" ]]; then
+      cap_docs_checkout="$(mktemp -d)"
+      trap 'rm -rf "$cap_docs_checkout"' EXIT
+      git clone --depth 1 --filter=blob:none --sparse https://github.com/vexyart/vexy-screensese-cap "$cap_docs_checkout/cap"
+      git -C "$cap_docs_checkout/cap" sparse-checkout set apps/web/content/docs
+      cap_docs_source="$cap_docs_checkout/cap/apps/web/content/docs"
+    fi
+    uv run --with fire import_cap_docs.py --source="$cap_docs_source"
     "${UV_ARGS[@]}" properdocs build -f properdocs.yml -d ../docs --strict
     touch ../docs/.nojekyll
     echo "Built ./docs"

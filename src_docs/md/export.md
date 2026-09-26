@@ -49,14 +49,14 @@ All options go after the command and the bundle: `screensese burn Demo.cap --raw
 
 Recordings made on Windows show `Win` where a Mac shows `Cmd`.
 
-## View follows action
+## Vexy Cinema
 
 Give `burn` a canvas and the picture moves with the work.
 
 ```bash
-screensese burn Demo.cap --canvas=1920x1080              # follow the pointer
-screensese burn Demo.cap --canvas=1920x1080 --leave=pan  # pan between close views instead of zooming out
-screensese burn Demo.cap --canvas=1920x1080 --view=keys  # views you chose while recording
+screensese burn Demo.cap --cinema=1920x1080              # follow the pointer
+screensese burn Demo.cap --cinema=1920x1080 --leave=pan  # pan between close views instead of zooming out
+screensese burn Demo.cap --cinema=1920x1080 --view=keys  # views you chose while recording
 ```
 
 The **far view** shows the largest canvas-shaped part of the recording, scaled to fit. The nine **close views** map recording pixels to canvas pixels at `--ratio` (default `1:1`) and sit at the corners, the edges and the centre: `left-top`, `xcenter-top`, `right-top`, `left-ymiddle`, `center`, `right-ymiddle`, `left-bottom`, `xcenter-bottom`, `right-bottom`.
@@ -67,7 +67,7 @@ With `--view=keys` you direct the views while recording: hold `Ctrl+Alt` (change
 
 `--transition` sets the seconds per zoom or pan; `0` cuts. Overlays are drawn after the move, so badges and click marks keep their size and stay with the pointer.
 
-## Reframe for social
+## Vexy Social
 
 Turn a landscape recording into a portrait video whose window follows the work.
 
@@ -77,6 +77,21 @@ screensese burn Demo.cap --social=720x1280     # glides sideways, and steps betw
 ```
 
 Each axis is planned by how much room the window has. With next to none it is pinned, and `--cut=bottom|top|both` says what is lost: a 1934-pixel-high screen into a 1920-pixel canvas loses its bottom 14 pixels. With plenty it glides after the pointer (`--follow`) or steps between `--rows`. Gliding ignores small movements inside a dead zone (`--dead_zone=0.4`), never overshoots, is capped in speed (`--follow_speed`) and stops at the edges of the recording. With `--view=keys`, the `Ctrl+Alt`+digit chords you pressed while recording choose the rows.
+
+
+The editor also has a **Vexy** button in its header: Timeflex, an export with keystrokes, clicks and captions burnt in, and an export of the overlays alone. It runs this exporter, so the exporter has to be installed (`./installmac.sh --exporter`, or `uv tool install` the package) along with ffmpeg.
+
+Both styles are in the app's editor too (the app has one editor: upstream's experimental second front end is not offered): right-click the zoom lane of the timeline (or use the prompt on an empty lane) and pick Vexy Cinema or Vexy Social. They fill the lane with ordinary zoom segments, which you can then move, stretch or delete like any other; upstream's click-based generator is still there beside them.
+
+The same two styles can be written into the project instead of rendered, as zoom segments the editor understands:
+
+```bash
+screensese zoom Demo.cap --style=cinema --write             # rest on the centre, zoom out when the pointer leaves
+screensese zoom Demo.cap --style=cinema --leave=pan --write # pan to where the pointer goes instead
+screensese zoom Demo.cap --style=social --write             # portrait canvas, gliding after the pointer
+```
+
+Open the recording in the editor afterwards: the segments are in the zoom lane, to be moved, stretched or deleted like any other. The untouched project is kept once as `project-config.original.json`.
 
 ## Timeflex
 
